@@ -1,5 +1,61 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheDaedalusSentenceCompanion.HomePage">
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="TheDaedalusSentenceCompanion.HomePage"
+		Title="Home"
+		Padding="20,20,20,20"
+		BackgroundImage="bg.png" >
 	<ContentPage.Content>
+	<StackLayout>
+		<Image Source="logo-daedalus.png"
+			HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"/>
+			
+		<Label Text="Choose your escape plan"
+	        HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+			TextColor="White"/>
+
+		<Button Text="Second-time Through"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand"
+			TextColor="#68c1e5"
+			BorderColor="#68c1e5"
+			BorderWidth="2"
+			BorderRadius="10"/>
+
+		<Button Text="Veteran"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand"
+			TextColor="#68c1e5"
+			BorderColor="#68c1e5"
+			BorderWidth="2"
+			BorderRadius="10"/>
+			
+		<Button Text="Expert"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand"
+			TextColor="#68c1e5"
+			BorderColor="#68c1e5"
+			BorderWidth="2"
+			BorderRadius="10"/>
+
+		<Button Text="Hell in Space"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand"
+			TextColor="#68c1e5"
+			BorderColor="#68c1e5"
+			BorderWidth="2"
+			BorderRadius="10"/>
+
+		<Button Text="Custom"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand"
+			TextColor="#68c1e5"
+			BorderColor="#68c1e5"
+			BorderWidth="2"
+			BorderRadius="10"/>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
