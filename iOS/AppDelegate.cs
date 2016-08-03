@@ -15,6 +15,7 @@ namespace TheDaedalusSentenceCompanion.iOS
 			global::Xamarin.Forms.Forms.Init ();
 
 			LoadApplication (new App ());
+			UIApplication.SharedApplication.IdleTimerDisabled = true;
 
 			return base.FinishedLaunching (app, options);
 		}

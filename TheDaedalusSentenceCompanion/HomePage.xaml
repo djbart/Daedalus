@@ -13,7 +13,7 @@
 	            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
 	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 	        </Image>
-			<StackLayout Padding="20">
+			<StackLayout Padding="20" VerticalOptions="Start">
 				<Image Source="logo-daedalus.png"
 					HorizontalOptions="Center"
 		            VerticalOptions="CenterAndExpand"/>
