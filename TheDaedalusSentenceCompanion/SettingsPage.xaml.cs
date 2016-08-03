@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace TheDaedalusSentenceCompanion
 {
-	public partial class HomePage : ContentPage
+	public partial class SettingsPage : ContentPage
 	{
-		public HomePage()
+		public SettingsPage()
 		{
 			InitializeComponent();
 		}
@@ -16,9 +16,9 @@ namespace TheDaedalusSentenceCompanion
 		{
 			Button button = (Button)sender;
 
-			Page settingsPage = new SettingsPage();
+			Page gamePage = new GamePage();
 
-			button.Navigation.PushModalAsync(settingsPage);
+			button.Navigation.PushModalAsync(gamePage);
 		}
 	}
 }

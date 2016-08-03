@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>The Daedalus Sentence Companion</string>
+	<string>Daedalus</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.cripplefishgames.the-daedalus-sentence-companion</string>
 	<key>CFBundleShortVersionString</key>
@@ -40,6 +40,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
+	<key>CFBundleName</key>
+	<string>Daedalus</string>
 </dict>
 </plist>
-

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="TheDaedalusSentenceCompanion.GamePage"
+		Title="Game"
+		Padding="0" >
+	<ContentPage.Content>
+		<RelativeLayout>
+			<Image
+	            Aspect="AspectFill"
+	            Source="bg.png"
+	            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+	        </Image>
+			<StackLayout Padding="20">
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>
