@@ -13,8 +13,89 @@
 	            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
 	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 	        </Image>
-			<StackLayout Padding="20">
-			</StackLayout>
+			<Grid Padding="20" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+			  <Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			  </Grid.RowDefinitions>
+			  <Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			  </Grid.ColumnDefinitions>
+			  <Button Text="Die 1"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="0" Grid.RowSpan="2"
+					Grid.Column="0" Grid.ColumnSpan="2"/>
+			  <Button Text="Die 2"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="0" Grid.RowSpan="2"
+					Grid.Column="2" Grid.ColumnSpan="2"/>
+			  <Button Text="Die 3"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="0" Grid.RowSpan="2"
+					Grid.Column="4" Grid.ColumnSpan="2"/>
+			  <Label TextColor="White" Text="ROUND TIME" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="00:00:00" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" />
+			  <Label TextColor="White" Text="TIME TO ESCAPE" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="00:00:00" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" />
+				<Button Text="Start round 1"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="7"
+					Grid.Column="0" Grid.ColumnSpan="6"/>
+				<Button Text="You've made it!"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="10"
+					Grid.Column="0" Grid.ColumnSpan="6"/>
+				<Button Text="Quit game"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Grid.Row="11"
+					Grid.Column="0" Grid.ColumnSpan="6"/>
+			</Grid>
 		</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>

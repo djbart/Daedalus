@@ -13,16 +13,46 @@
 	            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
 	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 	        </Image>
-			<StackLayout Padding="20">
-				<Button Text="Start the game"
+			<Grid Padding="20" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+			  <Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+			    <RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			  </Grid.RowDefinitions>
+			  <Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			    <ColumnDefinition Width="*" />
+			  </Grid.ColumnDefinitions>
+			  <Label TextColor="White" Text="Repairs imminent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Switch x:Name="GameTimerSwitch" Grid.Row="1" Grid.Column="3" />
+			  <Label  TextColor="White" Text="Automated security systems" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Switch x:Name="RoundTimerSwitch" Grid.Row="3" Grid.Column="3" />	
+			  <Label  TextColor="White" Text="Rolling lockdowns" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+				<Switch x:Name="DisabledLocationDieSwitch" Grid.Row="5" Grid.Column="3" />
+			  <Label  TextColor="White" Text="Emergency protocols" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+				<Switch x:Name="RoundTimerDieSwitch" Grid.Row="6" Grid.Column="3" />
+			  <Label  TextColor="White" Text="Faulty algorithm" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+				<Switch x:Name="TheseusDieSwitch" Grid.Row="7" Grid.Column="3" />
+				<Button Text="Start your escape!"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
-					Clicked="OnButtonClicked"/>
-			</StackLayout>
+					Clicked="OnButtonClicked"
+					Grid.Row="8"
+					Grid.Column="0" Grid.ColumnSpan="4"/>
+			</Grid>
 		</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>
