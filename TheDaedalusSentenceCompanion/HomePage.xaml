@@ -14,7 +14,7 @@
 	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 	        </Image>
 			<StackLayout Padding="20" VerticalOptions="Start">
-				<Image Source="logo-daedalus.png"
+				<Image Source="logodaedalus.png"
 					HorizontalOptions="Center"
 		            VerticalOptions="CenterAndExpand"/>
 					
@@ -23,14 +23,14 @@
 		            VerticalOptions="CenterAndExpand"
 					TextColor="White"/>
 
-				<Button Text="Second-time Through"
+				<Button x:Id="" Text="Second-time Through"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
-					Clicked="OnButtonClicked"/>
+					Clicked="OnSecondTimeButtonClicked"/>
 
 				<Button Text="Veteran"
 		            HorizontalOptions="Fill"
@@ -38,7 +38,8 @@
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
-					BorderRadius="10"/>
+					BorderRadius="10"
+					Clicked="OnVeteranButtonClicked"/>
 					
 				<Button Text="Expert"
 		            HorizontalOptions="Fill"
@@ -46,7 +47,8 @@
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
-					BorderRadius="10"/>
+					BorderRadius="10"
+					Clicked="OnExpertButtonClicked"/>
 
 				<Button Text="Hell in Space"
 		            HorizontalOptions="Fill"
@@ -54,7 +56,8 @@
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
-					BorderRadius="10"/>
+					BorderRadius="10"
+					Clicked="OnHellInSpaceButtonClicked"/>
 
 				<Button Text="Custom"
 		            HorizontalOptions="Fill"
@@ -62,7 +65,8 @@
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
-					BorderRadius="10"/>
+					BorderRadius="10"
+					Clicked="OnCustomButtonClicked"/>
 				</StackLayout>
 			</RelativeLayout>
 	</ContentPage.Content>

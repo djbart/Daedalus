@@ -12,12 +12,43 @@ namespace TheDaedalusSentenceCompanion
 			InitializeComponent();
 		}
 
-		void OnButtonClicked(object sender, EventArgs args)
+		void OnSecondTimeButtonClicked(object sender, EventArgs args)
 		{
-			Button button = (Button)sender;
+			Page settingsPage = new SettingsPage(new GameSettings(GameModes.SecondTimeThrough));
 
-			Page settingsPage = new SettingsPage();
+			var button = (Button)sender;
+			button.Navigation.PushModalAsync(settingsPage);
+		}
 
+		void OnVeteranButtonClicked(object sender, EventArgs args)
+		{
+			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Veteran));
+
+			var button = (Button)sender;
+			button.Navigation.PushModalAsync(settingsPage);
+		}
+
+		void OnExpertButtonClicked(object sender, EventArgs args)
+		{
+			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Expert));
+
+			var button = (Button)sender;
+			button.Navigation.PushModalAsync(settingsPage);
+		}
+
+		void OnHellInSpaceButtonClicked(object sender, EventArgs args)
+		{
+			Page settingsPage = new SettingsPage(new GameSettings(GameModes.HellInSpace));
+
+			var button = (Button)sender;
+			button.Navigation.PushModalAsync(settingsPage);
+		}
+
+		void OnCustomButtonClicked(object sender, EventArgs args)
+		{
+			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Custom));
+
+			var button = (Button)sender;
 			button.Navigation.PushModalAsync(settingsPage);
 		}
 	}

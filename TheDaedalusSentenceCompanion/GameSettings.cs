@@ -1,20 +1,20 @@
 ﻿using System;
 namespace TheDaedalusSentenceCompanion
 {
+	public enum GameModes
+	{
+		SecondTimeThrough,
+		Veteran,
+		Expert,
+		HellInSpace,
+		Custom
+	}
+
 	public class GameSettings
 	{
-		public GameSettings()
+		public GameSettings(GameModes gameMode)
 		{
-
-		}
-
-		public enum GameModes
-		{
-			SecondTimeThrough,
-			Veteran,
-			Expert,
-			HellInSpace,
-			Custom
+			setGameMode(gameMode);
 		}
 
 		public int CurrentRoundNumber { get; set; } = 1;
@@ -29,7 +29,7 @@ namespace TheDaedalusSentenceCompanion
 		public bool RoundTimerDieEnabled { get; set; } = false;
 		public bool TheseusDieEnabled { get; set; } = false;
 
-		public void setGameMode(GameModes gameMode)
+		private void setGameMode(GameModes gameMode)
 		{
 			switch (gameMode)
 			{

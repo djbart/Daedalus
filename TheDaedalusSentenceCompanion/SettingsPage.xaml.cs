@@ -7,9 +7,13 @@ namespace TheDaedalusSentenceCompanion
 {
 	public partial class SettingsPage : ContentPage
 	{
-		public SettingsPage()
+		private GameSettings GameSettings { get; set; }
+		
+		public SettingsPage(GameSettings gameSettings)
 		{
 			InitializeComponent();
+
+			GameSettings = gameSettings;
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)

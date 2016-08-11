@@ -121,9 +121,9 @@
     <BundleResource Include="Resources\bg.png" />
     <BundleResource Include="Resources\bg%402x.png" />
     <BundleResource Include="Resources\bg%403x.png" />
-    <BundleResource Include="Resources\logo-daedalus.png" />
-    <BundleResource Include="Resources\logo-daedalus%402x.png" />
-    <BundleResource Include="Resources\logo-daedalus%403x.png" />
+    <BundleResource Include="Resources\logodaedalus.png" />
+    <BundleResource Include="Resources\logodaedalus%402x.png" />
+    <BundleResource Include="Resources\logodaedalus%403x.png" />
     <BundleResource Include="Resources\splash.png" />
     <BundleResource Include="Resources\splash%402x.png" />
     <BundleResource Include="Resources\splash%403x.png" />
