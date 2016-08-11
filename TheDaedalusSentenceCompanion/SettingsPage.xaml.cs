@@ -14,6 +14,8 @@ namespace TheDaedalusSentenceCompanion
 			InitializeComponent();
 
 			GameSettings = gameSettings;
+
+			BindingContext = GameSettings;
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+
 namespace TheDaedalusSentenceCompanion
 {
 	public enum GameModes
@@ -10,8 +12,10 @@ namespace TheDaedalusSentenceCompanion
 		Custom
 	}
 
-	public class GameSettings
+	public class GameSettings: INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public GameSettings(GameModes gameMode)
 		{
 			setGameMode(gameMode);
@@ -19,15 +23,124 @@ namespace TheDaedalusSentenceCompanion
 
 		public int CurrentRoundNumber { get; set; } = 1;
 
-		public int GameTimerInSeconds { get; set; } = 3600;
-		public bool GameTimerEnabled { get; set; } = true;
+		private int gameTimerInMinutes = 60;
+		public int GameTimerInMinutes
+		{
+			get
+			{
+				return gameTimerInMinutes;
+			}
+			set
+			{
+				if (gameTimerInMinutes != value)
+				{
+					gameTimerInMinutes = value;
+					OnPropertyChanged("GameTimerInMinutes");
+				}
+			}
+		}
 
-		public int RoundTimerInSeconds { get; set; } = 25;
-		public bool RoundTimerEnabled { get; set; } = true;
+		private bool gameTimerEnabled = true;
+		public bool GameTimerEnabled
+		{
+			get
+			{
+				return gameTimerEnabled;
+			}
+			set
+			{
+				if (gameTimerEnabled != value)
+				{
+					gameTimerEnabled = value;
+					OnPropertyChanged("GameTimerEnabled");
+				}
+			}
+		}
 
-		public bool DisabledLocationDieEnabled { get; set; } = false;
-		public bool RoundTimerDieEnabled { get; set; } = false;
-		public bool TheseusDieEnabled { get; set; } = false;
+		private int roundTimerInSeconds = 25;
+		public int RoundTimerInSeconds
+		{
+			get
+			{
+				return roundTimerInSeconds;
+			}
+			set
+			{
+				if (roundTimerInSeconds != value)
+				{
+					roundTimerInSeconds = value;
+					OnPropertyChanged("RoundTimerInSeconds");
+				}
+			}
+		}
+
+		private bool roundTimerEnabled = true;
+		public bool RoundTimerEnabled
+		{
+			get
+			{
+				return roundTimerEnabled;
+			}
+			set
+			{
+				if (roundTimerEnabled != value)
+				{
+					roundTimerEnabled = value;
+					OnPropertyChanged("RoundTimerEnabled");
+				}
+			}
+		}
+
+		private bool disabledLocationDieEnabled = false;
+		public bool DisabledLocationDieEnabled
+		{
+			get
+			{
+				return disabledLocationDieEnabled;
+			}
+			set
+			{
+				if (disabledLocationDieEnabled != value)
+				{
+					disabledLocationDieEnabled = value;
+					OnPropertyChanged("DisabledLocationDieEnabled");
+				}
+			}
+		}
+
+		private bool roundTimerDieEnabled = false;
+		public bool RoundTimerDieEnabled
+		{
+			get
+			{
+				return roundTimerDieEnabled;
+			}
+			set
+			{
+				if (roundTimerDieEnabled != value)
+				{
+					roundTimerDieEnabled = value;
+					OnPropertyChanged("RoundTimerDieEnabled");
+				}
+			}
+		}
+
+		private bool theseusDieEnabled = false;
+		public bool TheseusDieEnabled
+		{
+			get
+			{
+				return theseusDieEnabled;
+			}
+			set
+			{
+				if (theseusDieEnabled != value)
+				{
+					theseusDieEnabled = value;
+					OnPropertyChanged("TheseusDieEnabled");
+				}
+			}
+		}
 
 		private void setGameMode(GameModes gameMode)
 		{
@@ -66,7 +179,7 @@ namespace TheDaedalusSentenceCompanion
 		private void useDifficultyEnhancer3()
 		{
 			GameTimerEnabled = true;
-			GameTimerInSeconds = 3600;
+			GameTimerInMinutes = 60;
 		}
 
 		private void useDifficultyEnhancer4()
@@ -83,6 +196,15 @@ namespace TheDaedalusSentenceCompanion
 		{
 			RoundTimerEnabled = true;
 			RoundTimerInSeconds = 25;
+		}
+
+			protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (PropertyChanged != null)
+			{
+				PropertyChanged(this,
+					new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
