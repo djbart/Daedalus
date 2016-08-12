@@ -32,6 +32,17 @@
 				<ColumnDefinition Width="*" />
 			    <ColumnDefinition Width="*" />
 			  </Grid.ColumnDefinitions>
+
+			  <Button Text="Back to home menu"
+		            HorizontalOptions="Fill"
+		            VerticalOptions="CenterAndExpand"
+					TextColor="#68c1e5"
+					BorderColor="#68c1e5"
+					BorderWidth="2"
+					BorderRadius="10"
+					Clicked="OnBackButtonClicked"
+					Grid.Row="0"
+					Grid.Column="0" Grid.ColumnSpan="4"/>
 				
 			  <Label TextColor="White" Text="Repairs imminent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding GameTimerEnabled}" Grid.Row="1" Grid.Column="3" />

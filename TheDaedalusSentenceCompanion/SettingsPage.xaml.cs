@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -20,11 +19,18 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnButtonClicked(object sender, EventArgs args)
 		{
-			Button button = (Button)sender;
+			var button = (Button)sender;
 
-			Page gamePage = new GamePage();
+			Page gamePage = new GamePage(GameSettings);
 
 			button.Navigation.PushModalAsync(gamePage);
+		}
+
+		void OnBackButtonClicked(object sender, EventArgs args)
+		{
+			var button = (Button)sender;
+
+			button.Navigation.PopModalAsync();
 		}
 	}
 }
