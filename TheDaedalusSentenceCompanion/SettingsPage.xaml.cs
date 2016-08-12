@@ -6,7 +6,7 @@ namespace TheDaedalusSentenceCompanion
 {
 	public partial class SettingsPage : ContentPage
 	{
-		private GameSettings GameSettings { get; set; }
+		GameSettings GameSettings { get; set; }
 		
 		public SettingsPage(GameSettings gameSettings)
 		{
@@ -34,4 +34,3 @@ namespace TheDaedalusSentenceCompanion
 		}
 	}
 }
-
