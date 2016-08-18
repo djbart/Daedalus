@@ -37,36 +37,42 @@
 				<ColumnDefinition Width="*" />
 			    <ColumnDefinition Width="*" />
 			  </Grid.ColumnDefinitions>
-			  <Button Text="Die 1"
+			  <Image Source="diespecial1.png"
 					IsVisible="{Binding DisabledLocationDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
 					Grid.Row="0" Grid.RowSpan="2"
-					Grid.Column="0" Grid.ColumnSpan="2"/>
-			  <Button Text="Die 2"
-					IsVisible="{Binding RoundTimerDieEnabled}"
+					Grid.Column="0" Grid.ColumnSpan="2">
+				<Image.GestureRecognizers>
+				        <TapGestureRecognizer
+				                Tapped="OnTapDisabledLocationDie"
+				                NumberOfTapsRequired="1" />
+				  </Image.GestureRecognizers>
+			  </Image>
+			  <Image Source="dietimer1.png"
+					IsVisible="{Binding DisabledLocationDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
 					Grid.Row="0" Grid.RowSpan="2"
-					Grid.Column="2" Grid.ColumnSpan="2"/>
-			  <Button Text="Die 3"
-					IsVisible="{Binding TheseusDieEnabled}"
+					Grid.Column="2" Grid.ColumnSpan="2">
+				<Image.GestureRecognizers>
+				        <TapGestureRecognizer
+				                Tapped="OnTapRoundTimerDie"
+				                NumberOfTapsRequired="1" />
+				  </Image.GestureRecognizers>
+			  </Image>
+			  <Image Source="dietheseus1.png"
+					IsVisible="{Binding DisabledLocationDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
 					Grid.Row="0" Grid.RowSpan="2"
-					Grid.Column="4" Grid.ColumnSpan="2"/>
+					Grid.Column="4" Grid.ColumnSpan="2">
+				<Image.GestureRecognizers>
+				        <TapGestureRecognizer
+				                Tapped="OnTapTheseusDie"
+				                NumberOfTapsRequired="1" />
+				  </Image.GestureRecognizers>
+			  </Image>
 			  <Label TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="ROUND TIME" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Label x:Name="RoundTimerRemainingLabel" TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="00:00:00" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" />
 			  <Label TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="TIME TO ESCAPE" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />

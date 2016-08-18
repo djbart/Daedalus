@@ -87,6 +87,24 @@
     <AndroidResource Include="Resources\drawable\bg.png" />
     <AndroidResource Include="Resources\drawable\logodaedalus.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\diespecial1.png" />
+    <AndroidResource Include="Resources\drawable\diespecial2.png" />
+    <AndroidResource Include="Resources\drawable\diespecial3.png" />
+    <AndroidResource Include="Resources\drawable\diespecial4.png" />
+    <AndroidResource Include="Resources\drawable\diespecial5.png" />
+    <AndroidResource Include="Resources\drawable\diespecial6.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus1.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus2.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus3.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus4.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus5.png" />
+    <AndroidResource Include="Resources\drawable\dietheseus6.png" />
+    <AndroidResource Include="Resources\drawable\dietimer1.png" />
+    <AndroidResource Include="Resources\drawable\dietimer2.png" />
+    <AndroidResource Include="Resources\drawable\dietimer3.png" />
+    <AndroidResource Include="Resources\drawable\dietimer4.png" />
+    <AndroidResource Include="Resources\drawable\dietimer5.png" />
+    <AndroidResource Include="Resources\drawable\dietimer6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

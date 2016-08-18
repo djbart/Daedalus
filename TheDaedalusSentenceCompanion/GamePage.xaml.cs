@@ -109,5 +109,39 @@ namespace TheDaedalusSentenceCompanion
 
 			RoundActive = !RoundActive;
 		}
+
+
+		async void OnTapDisabledLocationDie(object sender, EventArgs args)
+		{ 
+			var imageSender = (Image)sender;
+
+			var rnd = new Random();
+
+			await imageSender.FadeTo(0, 250, Easing.Linear);
+			imageSender.Source = string.Format("diespecial{0}.png", rnd.Next(1,6));
+			await imageSender.FadeTo(1, 250, Easing.Linear);
+		}
+
+		async void OnTapRoundTimerDie(object sender, EventArgs args)
+		{
+			var imageSender = (Image)sender;
+
+			var rnd = new Random();
+
+			await imageSender.FadeTo(0, 250, Easing.Linear);
+			imageSender.Source = string.Format("dietimer{0}.png", rnd.Next(1, 6));
+			await imageSender.FadeTo(1, 250, Easing.Linear);
+		}
+
+		async void OnTapTheseusDie(object sender, EventArgs args)
+		{
+			var imageSender = (Image)sender;
+
+			var rnd = new Random();
+
+			await imageSender.FadeTo(0, 250, Easing.Linear);
+			imageSender.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 6));
+			await imageSender.FadeTo(1, 250, Easing.Linear);
+		}
 	}
 }
