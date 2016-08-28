@@ -57,4 +57,22 @@
 	<data name="StartYourEscape" xml:space="preserve">
     	<value>Start your escape!</value>
 	</data>
+	<data name="RoundTime" xml:space="preserve">
+    	<value>ROUND TIME</value>
+	</data>
+	<data name="TimeToEscape" xml:space="preserve">
+    	<value>TIME TO ESCAPE</value>
+	</data>
+	<data name="StartRound" xml:space="preserve">
+    	<value>Start round</value>
+	</data>
+	<data name="EndRound" xml:space="preserve">
+    	<value>End round</value>
+	</data>
+	<data name="MadeIt" xml:space="preserve">
+    	<value>You've made it!</value>
+	</data>
+	<data name="QuitGame" xml:space="preserve">
+    	<value>Quit game</value>
+	</data>
 </root>

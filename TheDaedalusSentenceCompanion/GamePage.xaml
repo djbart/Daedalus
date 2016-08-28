@@ -3,6 +3,7 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="TheDaedalusSentenceCompanion.GamePage"
+		xmlns:i18n="clr-namespace:TheDaedalusSentenceCompanion;assembly=TheDaedalusSentenceCompanion"
 		Title="Game"
 		Padding="0" >
 	<ContentPage.Content>
@@ -73,9 +74,9 @@
 				                NumberOfTapsRequired="1" />
 				  </Image.GestureRecognizers>
 			  </Image>
-			  <Label TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="ROUND TIME" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="{i18n:Translate RoundTime}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Label x:Name="RoundTimerRemainingLabel" TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="00:00:00" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" />
-			  <Label TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="TIME TO ESCAPE" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="{i18n:Translate TimeToEscape}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Label x:Name="GameTimerRemainingLabel" TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="00:00:00" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" />
 				<Button Text="Start round 1"
 					x:Name="StartRoundButton"
@@ -88,7 +89,7 @@
 					Clicked="OnStartRoundButtonClicked"
 					Grid.Row="7"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
-				<Button Text="You've made it!"
+				<Button Text="{i18n:Translate MadeIt}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"
@@ -97,7 +98,7 @@
 					BorderRadius="10"
 					Grid.Row="10"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
-				<Button Text="Quit game"
+				<Button Text="{i18n:Translate QuitGame}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"

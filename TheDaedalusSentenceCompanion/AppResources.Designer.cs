@@ -136,5 +136,41 @@ namespace TheDaedalusSentenceCompanion {
                 return ResourceManager.GetString("StartYourEscape", resourceCulture);
             }
         }
+        
+        public static string RoundTime {
+            get {
+                return ResourceManager.GetString("RoundTime", resourceCulture);
+            }
+        }
+        
+        public static string TimeToEscape {
+            get {
+                return ResourceManager.GetString("TimeToEscape", resourceCulture);
+            }
+        }
+        
+        public static string StartRound {
+            get {
+                return ResourceManager.GetString("StartRound", resourceCulture);
+            }
+        }
+        
+        public static string EndRound {
+            get {
+                return ResourceManager.GetString("EndRound", resourceCulture);
+            }
+        }
+        
+        public static string MadeIt {
+            get {
+                return ResourceManager.GetString("MadeIt", resourceCulture);
+            }
+        }
+        
+        public static string QuitGame {
+            get {
+                return ResourceManager.GetString("QuitGame", resourceCulture);
+            }
+        }
     }
 }
