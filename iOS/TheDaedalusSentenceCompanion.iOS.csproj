@@ -116,6 +116,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Localize.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\bg.png" />

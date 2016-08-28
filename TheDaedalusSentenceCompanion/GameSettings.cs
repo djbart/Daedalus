@@ -36,7 +36,16 @@ namespace TheDaedalusSentenceCompanion
 				{
 					gameTimerInMinutes = value;
 					OnPropertyChanged("GameTimerInMinutes");
+					OnPropertyChanged("GameTimerInMinutesText");
 				}
+			}
+		}
+
+		public string GameTimerInMinutesText
+		{
+			get
+			{
+				return String.Format("{0} {1}", GameTimerInMinutes, AppResources.Minutes);
 			}
 		}
 
@@ -70,7 +79,16 @@ namespace TheDaedalusSentenceCompanion
 				{
 					roundTimerInSeconds = value;
 					OnPropertyChanged("RoundTimerInSeconds");
+					OnPropertyChanged("RoundTimerInSecondsText");
 				}
+			}
+		}
+
+		public string RoundTimerInSecondsText
+		{
+			get
+			{
+				return String.Format("{0} {1}", RoundTimerInSeconds, AppResources.Seconds);
 			}
 		}
 

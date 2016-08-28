@@ -3,6 +3,7 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="TheDaedalusSentenceCompanion.SettingsPage"
+		xmlns:i18n="clr-namespace:TheDaedalusSentenceCompanion;assembly=TheDaedalusSentenceCompanion"
 		Title="Settings"
 		Padding="0" >
 	<ContentPage.Content>
@@ -33,7 +34,7 @@
 			    <ColumnDefinition Width="*" />
 			  </Grid.ColumnDefinitions>
 
-			  <Button Text="Back to home menu"
+			  <Button Text="{i18n:Translate Back}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"
@@ -44,28 +45,28 @@
 					Grid.Row="0"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 				
-			  <Label TextColor="White" Text="Repairs imminent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label TextColor="White" Text="{i18n:Translate RepairsImminent}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding GameTimerEnabled}" Grid.Row="1" Grid.Column="3" />
 				
-			  <Label  TextColor="White" Text="{Binding GameTimerInMinutes, StringFormat='{0:F0} minutes'}" IsVisible="{Binding GameTimerEnabled}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
+			  <Label  TextColor="White" Text="{Binding GameTimerInMinutesText}" IsVisible="{Binding GameTimerEnabled}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
 			  <Stepper Value="{Binding GameTimerInMinutes }" IsVisible="{Binding GameTimerEnabled}" Minimum="20" Maximum="120" Increment="5" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
 				
-			  <Label  TextColor="White" Text="Automated security systems" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="{i18n:Translate AutomatedSecuritySystems}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding RoundTimerEnabled}" Grid.Row="3" Grid.Column="3" />	
 				
-			  <Label  TextColor="White" Text="{Binding RoundTimerInSeconds, StringFormat='{0:F0} seconds'}" IsVisible="{Binding RoundTimerEnabled}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
+			  <Label  TextColor="White" Text="{Binding RoundTimerInSecondsText}" IsVisible="{Binding RoundTimerEnabled}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 			  <Stepper Value="{Binding RoundTimerInSeconds }" IsVisible="{Binding RoundTimerEnabled}" Minimum="20" Maximum="120" Increment="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
 				
-			  <Label  TextColor="White" Text="Rolling lockdowns" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="{i18n:Translate RollingLockdowns}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding DisabledLocationDieEnabled}" Grid.Row="5" Grid.Column="3" />
 				
-			  <Label  TextColor="White" Text="Emergency protocols" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="{i18n:Translate EmergencyProtocols}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding RoundTimerDieEnabled}" Grid.Row="6" Grid.Column="3" />
 				
-			  <Label  TextColor="White" Text="Faulty algorithm" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Text="{i18n:Translate FaultyAlgorithm}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding TheseusDieEnabled}" Grid.Row="7" Grid.Column="3" />
 				
-			  <Button Text="Start your escape!"
+			  <Button Text="{i18n:Translate StartYourEscape}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					TextColor="#68c1e5"
