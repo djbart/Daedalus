@@ -38,7 +38,7 @@
 				<ColumnDefinition Width="*" />
 			    <ColumnDefinition Width="*" />
 			  </Grid.ColumnDefinitions>
-			  <Image Source="diespecial1.png"
+			  <Image x:Name="DisabledLocationDieImage" Source="diespecial1.png"
 					IsVisible="{Binding DisabledLocationDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
@@ -50,8 +50,8 @@
 				                NumberOfTapsRequired="1" />
 				  </Image.GestureRecognizers>
 			  </Image>
-			  <Image Source="dietimer1.png"
-					IsVisible="{Binding DisabledLocationDieEnabled}"
+			  <Image x:Name="RoundTimerDieImage" Source="dietimer1.png"
+					IsVisible="{Binding RoundTimerDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					Grid.Row="0" Grid.RowSpan="2"
@@ -62,8 +62,8 @@
 				                NumberOfTapsRequired="1" />
 				  </Image.GestureRecognizers>
 			  </Image>
-			  <Image Source="dietheseus1.png"
-					IsVisible="{Binding DisabledLocationDieEnabled}"
+			  <Image x:Name="TheseusDieImage" Source="dietheseus1.png"
+					IsVisible="{Binding TheseusDieEnabled}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
 					Grid.Row="0" Grid.RowSpan="2"
@@ -74,8 +74,8 @@
 				                NumberOfTapsRequired="1" />
 				  </Image.GestureRecognizers>
 			  </Image>
-			  <Label TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="{i18n:Translate RoundTime}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
-			  <Label x:Name="RoundTimerRemainingLabel" TextColor="White" IsVisible="{Binding RoundTimerEnabled}" Text="00:00:00" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" />
+			  <Label TextColor="White" IsVisible="{Binding RoundTimerVisible}" Text="{i18n:Translate RoundTime}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label x:Name="RoundTimerRemainingLabel" Text="{Binding RoundTimerCountdownText}" TextColor="White" IsVisible="{Binding RoundTimerVisible}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" />
 			  <Label TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="{i18n:Translate TimeToEscape}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Label x:Name="GameTimerRemainingLabel" TextColor="White" IsVisible="{Binding GameTimerEnabled}" Text="00:00:00" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" />
 				<Button Text="Start round 1"

@@ -28,7 +28,20 @@ namespace TheDaedalusSentenceCompanion
 				Device.StartTimer(TimeSpan.FromSeconds(1), UpdateGameTimer);
 			}
 
-			RoundTimerRemainingLabel.Text = string.Format("00:00:{0}", GameSettings.RoundTimerInSeconds.ToString("D2"));
+			if (GameSettings.DisabledLocationDieEnabled)
+			{
+				RollDisabledLocationDie(DisabledLocationDieImage);
+			}
+
+			if (GameSettings.RoundTimerDieEnabled)
+			{
+				RollRoundDie(RoundTimerDieImage);
+			}
+
+			if (GameSettings.TheseusDieEnabled)
+			{
+				RollTheseusDie(TheseusDieImage);
+			}
 		}
 
 		void OnQuitButtonClicked(object sender, EventArgs args)
@@ -104,44 +117,54 @@ namespace TheDaedalusSentenceCompanion
 			{
 				GameSettings.CurrentRoundNumber++;
 				StartRoundButton.Text = "Start round " + GameSettings.CurrentRoundNumber;
-				RoundTimerRemainingLabel.Text = string.Format("00:00:{0}", GameSettings.RoundTimerInSeconds.ToString("D2"));
 			}
 
 			RoundActive = !RoundActive;
 		}
 
 
-		async void OnTapDisabledLocationDie(object sender, EventArgs args)
+		void OnTapDisabledLocationDie(object sender, EventArgs args)
 		{ 
-			var imageSender = (Image)sender;
-
-			var rnd = new Random();
-
-			await imageSender.FadeTo(0, 250, Easing.Linear);
-			imageSender.Source = string.Format("diespecial{0}.png", rnd.Next(1,6));
-			await imageSender.FadeTo(1, 250, Easing.Linear);
+			RollDisabledLocationDie((Image)sender);
 		}
 
-		async void OnTapRoundTimerDie(object sender, EventArgs args)
+		void OnTapRoundTimerDie(object sender, EventArgs args)
 		{
-			var imageSender = (Image)sender;
-
-			var rnd = new Random();
-
-			await imageSender.FadeTo(0, 250, Easing.Linear);
-			imageSender.Source = string.Format("dietimer{0}.png", rnd.Next(1, 6));
-			await imageSender.FadeTo(1, 250, Easing.Linear);
+			RollRoundDie((Image)sender);
 		}
 
-		async void OnTapTheseusDie(object sender, EventArgs args)
+		void OnTapTheseusDie(object sender, EventArgs args)
 		{
-			var imageSender = (Image)sender;
+			RollTheseusDie((Image)sender);
+		}
 
+		async void RollDisabledLocationDie(Image imageToUpdate)
+		{
 			var rnd = new Random();
 
-			await imageSender.FadeTo(0, 250, Easing.Linear);
-			imageSender.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 6));
-			await imageSender.FadeTo(1, 250, Easing.Linear);
+			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+			imageToUpdate.Source = string.Format("diespecial{0}.png", rnd.Next(1, 7));
+			await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+		}
+
+		async void RollRoundDie(Image imageToUpdate)
+		{
+			var rnd = new Random();
+			var diceroll = rnd.Next(1, 7);
+
+			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+			imageToUpdate.Source = string.Format("dietimer{0}.png", diceroll);
+			GameSettings.RoundTimerInSeconds = 10 + (5 * diceroll);
+			await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+		}
+
+		async void RollTheseusDie(Image imageToUpdate)
+		{
+			var rnd = new Random();
+
+			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+			imageToUpdate.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 7));
+			await imageToUpdate.FadeTo(1, 250, Easing.Linear);	
 		}
 	}
 }

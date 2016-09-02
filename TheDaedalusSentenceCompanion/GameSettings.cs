@@ -80,6 +80,7 @@ namespace TheDaedalusSentenceCompanion
 					roundTimerInSeconds = value;
 					OnPropertyChanged("RoundTimerInSeconds");
 					OnPropertyChanged("RoundTimerInSecondsText");
+					OnPropertyChanged("RoundTimerCountdownText");
 				}
 			}
 		}
@@ -89,6 +90,14 @@ namespace TheDaedalusSentenceCompanion
 			get
 			{
 				return String.Format("{0} {1}", RoundTimerInSeconds, AppResources.Seconds);
+			}
+		}
+
+		public string RoundTimerCountdownText
+		{
+			get
+			{
+				return string.Format("00:00:{0}", RoundTimerInSeconds.ToString("D2"));
 			}
 		}
 
@@ -104,6 +113,12 @@ namespace TheDaedalusSentenceCompanion
 				if (roundTimerEnabled != value)
 				{
 					roundTimerEnabled = value;
+
+					if (value == true)
+					{
+						this.RoundTimerDieEnabled = false;
+					}
+
 					OnPropertyChanged("RoundTimerEnabled");
 				}
 			}
@@ -138,8 +153,22 @@ namespace TheDaedalusSentenceCompanion
 				if (roundTimerDieEnabled != value)
 				{
 					roundTimerDieEnabled = value;
+
+					if (value == true)
+					{
+						this.RoundTimerEnabled = false;
+					}
+
 					OnPropertyChanged("RoundTimerDieEnabled");
 				}
+			}
+		}
+
+		public bool RoundTimerVisible
+		{
+			get
+			{
+				return RoundTimerEnabled || RoundTimerDieEnabled;
 			}
 		}
 
