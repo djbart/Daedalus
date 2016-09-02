@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="3" translatesAutoresizingMaskIntoConstraints="NO" image="splash.png" misplaced="YES">
+                                <rect key="frame" x="39" y="45" width="522" height="510"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="22" firstItem="3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom"/>
+                            <constraint id="23" firstItem="Ze5-6b-2t3" firstAttribute="trailing" secondItem="3" secondAttribute="trailing"/>
+                            <constraint id="24" firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="3" secondAttribute="bottom"/>
+                            <constraint id="27" firstItem="3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading"/>
+                        </constraints>
+                    </view>
+                    <connections/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg.png" width="320" height="568"/>
+        <image name="logodaedalus.png" width="1318" height="579"/>
+        <image name="splash.png" width="320" height="568"/>
+        <image name="diespecial1.png" width="80" height="80"/>
+        <image name="diespecial2.png" width="80" height="80"/>
+        <image name="diespecial3.png" width="80" height="80"/>
+        <image name="diespecial4.png" width="80" height="80"/>
+        <image name="diespecial5.png" width="80" height="80"/>
+        <image name="diespecial6.png" width="80" height="80"/>
+        <image name="dietimer1.png" width="80" height="80"/>
+        <image name="dietimer2.png" width="80" height="80"/>
+        <image name="dietimer3.png" width="80" height="80"/>
+        <image name="dietimer4.png" width="80" height="80"/>
+        <image name="dietimer5.png" width="80" height="80"/>
+        <image name="dietimer6.png" width="80" height="80"/>
+        <image name="dietheseus1.png" width="80" height="80"/>
+        <image name="dietheseus2.png" width="80" height="80"/>
+        <image name="dietheseus3.png" width="80" height="80"/>
+        <image name="dietheseus4.png" width="80" height="80"/>
+        <image name="dietheseus5.png" width="80" height="80"/>
+        <image name="dietheseus6.png" width="80" height="80"/>
+    </resources>
+</document>
