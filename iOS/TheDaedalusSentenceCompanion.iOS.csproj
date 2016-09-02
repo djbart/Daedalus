@@ -114,6 +114,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Localize.cs" />
+    <Compile Include="iOSSoundProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\bg.png" />
@@ -125,9 +126,6 @@
     <BundleResource Include="Resources\splash.png" />
     <BundleResource Include="Resources\splash%402x.png" />
     <BundleResource Include="Resources\splash%403x.png" />
-    <BundleResource Include="Resources\diespecial1.png" />
-    <BundleResource Include="Resources\diespecial1%402x.png" />
-    <BundleResource Include="Resources\diespecial1%403x.png" />
     <BundleResource Include="Resources\diespecial2.png" />
     <BundleResource Include="Resources\diespecial2%402x.png" />
     <BundleResource Include="Resources\diespecial2%403x.png" />
@@ -179,9 +177,14 @@
     <BundleResource Include="Resources\dietheseus6.png" />
     <BundleResource Include="Resources\dietheseus6%402x.png" />
     <BundleResource Include="Resources\dietheseus6%403x.png" />
+    <BundleResource Include="Sounds\Ian.mp3" />
+    <BundleResource Include="Sounds\Thomas.mp3" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sounds\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
