@@ -95,7 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
@@ -130,6 +129,7 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon48.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon32.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
