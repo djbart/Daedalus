@@ -28,6 +28,11 @@ namespace TheDaedalusSentenceCompanion
 				Device.StartTimer(TimeSpan.FromSeconds(1), UpdateGameTimer);
 			}
 
+			RerollDice();
+		}
+
+		void RerollDice()
+		{
 			if (GameSettings.DisabledLocationDieEnabled)
 			{
 				RollDisabledLocationDie(DisabledLocationDieImage);
@@ -46,9 +51,18 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnQuitButtonClicked(object sender, EventArgs args)
 		{
-			var button = (Button)sender;
+			Navigation.PopModalAsync();
+		}
 
-			button.Navigation.PopModalAsync();
+		async void OnMadeItButtonClicked(object sender, EventArgs args)
+		{
+			var answer = await DisplayAlert("Congratulations", "You escaped the space station!", "Back to home screen","Cancel");
+
+			if (answer == true)
+			{
+				await Navigation.PopModalAsync(false);
+				await Navigation.PopModalAsync();
+			}
 		}
 
 		void OnStartRoundButtonClicked(object sender, EventArgs args)
@@ -58,10 +72,26 @@ namespace TheDaedalusSentenceCompanion
 
 		bool UpdateGameTimer()
 		{
-			GameTimerRemainingLabel.Text = GetTimeRemaining(GameSettings.GameTimerInMinutes * 60, GameStartTime);
+			string timeRemaining = GetTimeRemaining(GameSettings.GameTimerInMinutes * 60, GameStartTime);
+
+			if (timeRemaining == NoTimeRemaining)
+			{
+				GameTimerEnded();
+			}
+			else
+			{
+				GameTimerRemainingLabel.Text = timeRemaining;
+			}
 
 			return true;
 	    }
+
+		async void GameTimerEnded()
+		{
+			await DisplayAlert("Time's up", "You failed to escape the space prison", "Back to home screen");
+			await Navigation.PopModalAsync(false);
+			await Navigation.PopModalAsync();
+		}
 
 		bool UpdateRoundTimer()
 		{
@@ -117,25 +147,49 @@ namespace TheDaedalusSentenceCompanion
 			{
 				GameSettings.CurrentRoundNumber++;
 				StartRoundButton.Text = "Start round " + GameSettings.CurrentRoundNumber;
+				RerollDice();
 			}
 
 			RoundActive = !RoundActive;
+
+			if (RoundActive)
+			{
+				DisabledLocationDieImage.Opacity = 0.5;
+				RoundTimerDieImage.Opacity = 0.5;
+				TheseusDieImage.Opacity = 0.5;
+			}
+			else
+			{
+				DisabledLocationDieImage.Opacity = 1;
+				RoundTimerDieImage.Opacity = 1;
+				TheseusDieImage.Opacity = 1;
+			}
+
 		}
 
 
 		void OnTapDisabledLocationDie(object sender, EventArgs args)
-		{ 
-			RollDisabledLocationDie((Image)sender);
+		{
+			if (!RoundActive)
+			{
+				RollDisabledLocationDie((Image)sender);
+			}
 		}
 
 		void OnTapRoundTimerDie(object sender, EventArgs args)
 		{
-			RollRoundDie((Image)sender);
+			if (!RoundActive)
+			{
+				RollRoundDie((Image)sender);
+			}
 		}
 
 		void OnTapTheseusDie(object sender, EventArgs args)
 		{
-			RollTheseusDie((Image)sender);
+			if (!RoundActive)
+			{
+				RollTheseusDie((Image)sender);
+			}
 		}
 
 		async void RollDisabledLocationDie(Image imageToUpdate)

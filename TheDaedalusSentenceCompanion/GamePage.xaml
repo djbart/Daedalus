@@ -96,6 +96,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					Clicked="OnMadeItButtonClicked"
 					Grid.Row="10"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
 				<Button Text="{i18n:Translate QuitGame}"
