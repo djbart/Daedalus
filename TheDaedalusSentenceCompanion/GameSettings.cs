@@ -97,7 +97,9 @@ namespace TheDaedalusSentenceCompanion
 		{
 			get
 			{
-				return string.Format("00:00:{0}", RoundTimerInSeconds.ToString("D2"));
+				string minutes = (RoundTimerInSeconds / 60).ToString("D2");
+				string seconds = (RoundTimerInSeconds % 60).ToString("D2");
+				return string.Format("00:{0}:{1}", minutes, seconds);
 			}
 		}
 
