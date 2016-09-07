@@ -14,19 +14,28 @@
 	            RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
 	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
 	        </Image>
-			<StackLayout Padding="20" VerticalOptions="Start">
-				<Image Source="logodaedalus.png"
-					HorizontalOptions="Center"
-		            VerticalOptions="CenterAndExpand"/>
-					
+			<Grid Padding="20" RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+	            RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+	            <Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+			    	<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Image Source="logodaedalus.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
 				<Label Text="{i18n:Translate ChooseYourEscapePlan}"
-			        HorizontalOptions="Center"
-		            VerticalOptions="CenterAndExpand"
-					TextColor="White"/>
-
+					XAlign="Center"
+					TextColor="White" Grid.Row="2" Grid.Column="0"/>
 				<Button x:Id="" Text="{i18n:Translate SecondTimeThrough}"
-		            HorizontalOptions="Fill"
-		            VerticalOptions="CenterAndExpand"
+					Grid.Row="3"
+					Grid.Column="0"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
@@ -34,8 +43,8 @@
 					Clicked="OnSecondTimeButtonClicked"/>
 
 				<Button Text="{i18n:Translate Veteran}"
-		            HorizontalOptions="Fill"
-		            VerticalOptions="CenterAndExpand"
+					Grid.Row="4"
+					Grid.Column="0"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
@@ -43,8 +52,8 @@
 					Clicked="OnVeteranButtonClicked"/>
 					
 				<Button Text="{i18n:Translate Expert}"
-		            HorizontalOptions="Fill"
-		            VerticalOptions="CenterAndExpand"
+					Grid.Row="5"
+					Grid.Column="0"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
@@ -52,8 +61,8 @@
 					Clicked="OnExpertButtonClicked"/>
 
 				<Button Text="{i18n:Translate HellInSpace}"
-		            HorizontalOptions="Fill"
-		            VerticalOptions="CenterAndExpand"
+					Grid.Row="6"
+					Grid.Column="0"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
@@ -61,14 +70,14 @@
 					Clicked="OnHellInSpaceButtonClicked"/>
 
 				<Button Text="{i18n:Translate Custom}"
-		            HorizontalOptions="Fill"
-		            VerticalOptions="CenterAndExpand"
+					Grid.Row="7"
+					Grid.Column="0"
 					TextColor="#68c1e5"
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnCustomButtonClicked"/>
-				</StackLayout>
+			</Grid>
 			</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>
