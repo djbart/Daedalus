@@ -16,7 +16,7 @@
     	<value>Kies uw plan</value>
 	</data>
 	<data name="SecondTimeThrough" xml:space="preserve">
-    	<value>Second-time Trough</value>
+    	<value>Second-time Through</value>
 	</data>
 	<data name="Veteran" xml:space="preserve">
     	<value>Veteran</value>
@@ -74,5 +74,23 @@
 	</data>
 	<data name="QuitGame" xml:space="preserve">
     	<value>Stop het spel</value>
+	</data>
+	<data name="Escaped" xml:space="preserve">
+    	<value>Proficiat</value>
+	</data>
+	<data name="EscapedDescription" xml:space="preserve">
+    	<value>Jullie zijn ontsnapt uit het ruimtestation!</value>
+	</data>
+	<data name="Captured" xml:space="preserve">
+    	<value>De tijd is op</value>
+	</data>
+	<data name="CapturedDescription" xml:space="preserve">
+    	<value>De ontsnappingspoging is mislukt</value>
+	</data>
+	<data name="BackToHome" xml:space="preserve">
+    	<value>Terug naar het beginscherm</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+    	<value>Annuleer</value>
 	</data>
 </root>

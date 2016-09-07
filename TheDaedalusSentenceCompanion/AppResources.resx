@@ -75,4 +75,22 @@
 	<data name="QuitGame" xml:space="preserve">
     	<value>Quit game</value>
 	</data>
+	<data name="Escaped" xml:space="preserve">
+    	<value>Congratulations</value>
+	</data>
+	<data name="EscapedDescription" xml:space="preserve">
+    	<value>You escaped the space station!</value>
+	</data>
+	<data name="Captured" xml:space="preserve">
+    	<value>Time's up</value>
+	</data>
+	<data name="CapturedDescription" xml:space="preserve">
+    	<value>You failed to escape the space prison</value>
+	</data>
+	<data name="BackToHome" xml:space="preserve">
+    	<value>Back to home screen</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+    	<value>Cancel</value>
+	</data>
 </root>

@@ -57,7 +57,7 @@ namespace TheDaedalusSentenceCompanion
 
 		async void OnMadeItButtonClicked(object sender, EventArgs args)
 		{
-			var answer = await DisplayAlert("Congratulations", "You escaped the space station!", "Back to home screen","Cancel");
+			var answer = await DisplayAlert(AppResources.Escaped, AppResources.EscapedDescription, AppResources.BackToHome, AppResources.Cancel);
 
 			if (answer == true)
 			{
@@ -89,7 +89,7 @@ namespace TheDaedalusSentenceCompanion
 
 		async void GameTimerEnded()
 		{
-			await DisplayAlert("Time's up", "You failed to escape the space prison", "Back to home screen");
+			await DisplayAlert(AppResources.Captured, AppResources.CapturedDescription, AppResources.BackToHome);
 			await Navigation.PopModalAsync(false);
 			await Navigation.PopModalAsync();
 		}
@@ -142,12 +142,12 @@ namespace TheDaedalusSentenceCompanion
 
 				Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
 
-				StartRoundButton.Text = "End round " + GameSettings.CurrentRoundNumber;
+				StartRoundButton.Text = AppResources.EndRound + " " + GameSettings.CurrentRoundNumber;
 			}
 			else
 			{
 				GameSettings.CurrentRoundNumber++;
-				StartRoundButton.Text = "Start round " + GameSettings.CurrentRoundNumber;
+				StartRoundButton.Text = AppResources.StartRound +  " " + GameSettings.CurrentRoundNumber;
 				RerollDice();
 			}
 

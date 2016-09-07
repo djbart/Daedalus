@@ -172,5 +172,41 @@ namespace TheDaedalusSentenceCompanion {
                 return ResourceManager.GetString("QuitGame", resourceCulture);
             }
         }
+        
+        public static string Escaped {
+            get {
+                return ResourceManager.GetString("Escaped", resourceCulture);
+            }
+        }
+        
+        public static string EscapedDescription {
+            get {
+                return ResourceManager.GetString("EscapedDescription", resourceCulture);
+            }
+        }
+        
+        public static string Captured {
+            get {
+                return ResourceManager.GetString("Captured", resourceCulture);
+            }
+        }
+        
+        public static string CapturedDescription {
+            get {
+                return ResourceManager.GetString("CapturedDescription", resourceCulture);
+            }
+        }
+        
+        public static string BackToHome {
+            get {
+                return ResourceManager.GetString("BackToHome", resourceCulture);
+            }
+        }
+        
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
     }
 }
