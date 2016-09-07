@@ -11,6 +11,7 @@ namespace TheDaedalusSentenceCompanion
 		DateTime RoundStartTime { get; set; }
 		bool RoundActive { get; set; } = false;
 		const string NoTimeRemaining = "00:00:00";
+		bool isTapped = false;
 
 		public GamePage(GameSettings gameSettings)
 		{
@@ -194,31 +195,45 @@ namespace TheDaedalusSentenceCompanion
 
 		async void RollDisabledLocationDie(Image imageToUpdate)
 		{
-			var rnd = new Random();
-
-			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
-			imageToUpdate.Source = string.Format("diespecial{0}.png", rnd.Next(1, 7));
-			await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+			if (!isTapped)
+			{
+				isTapped = true;
+				var rnd = new Random();
+				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+				imageToUpdate.Source = string.Format("diespecial{0}.png", rnd.Next(1, 7));
+				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+				isTapped = false;
+			}
 		}
 
 		async void RollRoundDie(Image imageToUpdate)
 		{
-			var rnd = new Random();
-			var diceroll = rnd.Next(1, 7);
+			if (!isTapped)
+			{
+				isTapped = true;
+				var rnd = new Random();
+				var diceroll = rnd.Next(1, 7);
 
-			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
-			imageToUpdate.Source = string.Format("dietimer{0}.png", diceroll);
-			GameSettings.RoundTimerInSeconds = 10 + (5 * diceroll);
-			await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+				imageToUpdate.Source = string.Format("dietimer{0}.png", diceroll);
+				GameSettings.RoundTimerInSeconds = 10 + (5 * diceroll);
+				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+				isTapped = false;
+			}
 		}
 
 		async void RollTheseusDie(Image imageToUpdate)
 		{
-			var rnd = new Random();
+			if (!isTapped)
+			{
+				isTapped = true;
+				var rnd = new Random();
 
-			await imageToUpdate.FadeTo(0, 250, Easing.Linear);
-			imageToUpdate.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 7));
-			await imageToUpdate.FadeTo(1, 250, Easing.Linear);	
+				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
+				imageToUpdate.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 7));
+				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
+				isTapped = false;
+			}
 		}
 	}
 }
