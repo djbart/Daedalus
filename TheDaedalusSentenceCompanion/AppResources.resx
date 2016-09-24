@@ -93,4 +93,7 @@
 	<data name="Cancel" xml:space="preserve">
     	<value>Cancel</value>
 	</data>
+	<data name="RerollDice" xml:space="preserve">
+    	<value>Reroll dice</value>
+	</data>
 </root>

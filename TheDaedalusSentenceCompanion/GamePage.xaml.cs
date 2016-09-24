@@ -9,7 +9,13 @@ namespace TheDaedalusSentenceCompanion
 		GameSettings GameSettings { get; set; }
 		DateTime GameStartTime { get; set; }
 		DateTime RoundStartTime { get; set; }
-		bool RoundActive { get; set; } = false;
+		enum RoundState
+		{
+			Ready,
+			Active,
+			Finished
+		}
+		RoundState CurrentRoundState { get; set; } = RoundState.Ready;
 		const string NoTimeRemaining = "00:00:00";
 		bool isTapped = false;
 
@@ -36,17 +42,17 @@ namespace TheDaedalusSentenceCompanion
 		{
 			if (GameSettings.DisabledLocationDieEnabled)
 			{
-				RollDisabledLocationDie(DisabledLocationDieImage);
+				RollDisabledLocationDie(DisabledLocationDieImage, false);
 			}
 
 			if (GameSettings.RoundTimerDieEnabled)
 			{
-				RollRoundDie(RoundTimerDieImage);
+				RollRoundDie(RoundTimerDieImage, false);
 			}
 
 			if (GameSettings.TheseusDieEnabled)
 			{
-				RollTheseusDie(TheseusDieImage);
+				RollTheseusDie(TheseusDieImage, false);
 			}
 		}
 
@@ -96,7 +102,7 @@ namespace TheDaedalusSentenceCompanion
 
 		bool UpdateRoundTimer()
 		{
-			if (RoundActive)
+			if (CurrentRoundState == RoundState.Active)
 			{
 				string timeRemaining = GetTimeRemaining(GameSettings.RoundTimerInSeconds, RoundStartTime);
 
@@ -110,7 +116,7 @@ namespace TheDaedalusSentenceCompanion
 				}
 			}
 
-			return RoundActive;
+			return CurrentRoundState == RoundState.Active;
 		}
 
 		string GetTimeRemaining(int totalSeconds, DateTime startTime)
@@ -136,24 +142,38 @@ namespace TheDaedalusSentenceCompanion
 
 		void SwitchRound()
 		{
-			if (!RoundActive)
+			//Advance round state
+			switch (CurrentRoundState)
 			{
-				RoundStartTime = DateTime.Now;
-
-				Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
-
-				StartRoundButton.Text = AppResources.EndRound + " " + GameSettings.CurrentRoundNumber;
+				case RoundState.Active:
+					CurrentRoundState = RoundState.Finished;
+					break;
+				case RoundState.Finished:
+					CurrentRoundState = RoundState.Ready;
+					break;
+				case RoundState.Ready:
+					CurrentRoundState = RoundState.Active;
+					break;
 			}
-			else
+
+			switch (CurrentRoundState)
 			{
-				GameSettings.CurrentRoundNumber++;
-				StartRoundButton.Text = AppResources.StartRound +  " " + GameSettings.CurrentRoundNumber;
-				RerollDice();
+				case RoundState.Active:
+					RoundStartTime = DateTime.Now;
+					Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
+					StartRoundButton.Text = AppResources.EndRound + " " + GameSettings.CurrentRoundNumber;
+					break;
+				case RoundState.Ready:
+					RerollDice();
+					GameSettings.CurrentRoundNumber++;
+					StartRoundButton.Text = AppResources.StartRound + " " + GameSettings.CurrentRoundNumber;
+					break;
+				case RoundState.Finished:
+					StartRoundButton.Text = AppResources.RerollDice;
+					break;
 			}
 
-			RoundActive = !RoundActive;
-
-			if (RoundActive)
+			if (CurrentRoundState == RoundState.Active)
 			{
 				DisabledLocationDieImage.Opacity = 0.5;
 				RoundTimerDieImage.Opacity = 0.5;
@@ -171,46 +191,48 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnTapDisabledLocationDie(object sender, EventArgs args)
 		{
-			if (!RoundActive)
+			if (CurrentRoundState != RoundState.Active)
 			{
-				RollDisabledLocationDie((Image)sender);
+				RollDisabledLocationDie((Image)sender, true);
 			}
 		}
 
 		void OnTapRoundTimerDie(object sender, EventArgs args)
 		{
-			if (!RoundActive)
+			if (CurrentRoundState != RoundState.Active)
 			{
-				RollRoundDie((Image)sender);
+				RollRoundDie((Image)sender, true);
 			}
 		}
 
 		void OnTapTheseusDie(object sender, EventArgs args)
 		{
-			if (!RoundActive)
+			if (CurrentRoundState != RoundState.Active)
 			{
-				RollTheseusDie((Image)sender);
+				RollTheseusDie((Image)sender, true);
 			}
 		}
 
-		async void RollDisabledLocationDie(Image imageToUpdate)
+		async void RollDisabledLocationDie(Image imageToUpdate, bool interactive)
 		{
 			if (!isTapped)
 			{
-				isTapped = true;
+				if (interactive) isTapped = true;
 				var rnd = new Random();
 				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
 				imageToUpdate.Source = string.Format("diespecial{0}.png", rnd.Next(1, 7));
 				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
-				isTapped = false;
+				if (interactive) isTapped = false;
 			}
 		}
 
-		async void RollRoundDie(Image imageToUpdate)
+
+
+		async void RollRoundDie(Image imageToUpdate, bool interactive)
 		{
 			if (!isTapped)
 			{
-				isTapped = true;
+				if (interactive) isTapped = true;
 				var rnd = new Random();
 				var diceroll = rnd.Next(1, 7);
 
@@ -218,21 +240,21 @@ namespace TheDaedalusSentenceCompanion
 				imageToUpdate.Source = string.Format("dietimer{0}.png", diceroll);
 				GameSettings.RoundTimerInSeconds = 10 + (5 * diceroll);
 				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
-				isTapped = false;
+				if (interactive) isTapped = false;
 			}
 		}
 
-		async void RollTheseusDie(Image imageToUpdate)
+		async void RollTheseusDie(Image imageToUpdate, bool interactive)
 		{
 			if (!isTapped)
 			{
-				isTapped = true;
+				if (interactive) isTapped = true;
 				var rnd = new Random();
 
 				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
 				imageToUpdate.Source = string.Format("dietheseus{0}.png", rnd.Next(1, 7));
 				await imageToUpdate.FadeTo(1, 250, Easing.Linear);
-				isTapped = false;
+				if (interactive) isTapped = false;
 			}
 		}
 	}

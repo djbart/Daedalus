@@ -208,5 +208,11 @@ namespace TheDaedalusSentenceCompanion {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
+        
+        public static string RerollDice {
+            get {
+                return ResourceManager.GetString("RerollDice", resourceCulture);
+            }
+        }
     }
 }
