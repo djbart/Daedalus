@@ -19,6 +19,8 @@ namespace TheDaedalusSentenceCompanion
 		const string NoTimeRemaining = "00:00:00";
 		bool isTapped = false;
 
+		ISoundProvider AudioManager { get; set; } = DependencyService.Get<ISoundProvider>();
+
 		public GamePage(GameSettings gameSettings)
 		{
 			InitializeComponent();
@@ -40,6 +42,8 @@ namespace TheDaedalusSentenceCompanion
 
 		void RerollDice()
 		{
+			AudioManager.PlaySound("DiceRoll.wav");
+
 			if (GameSettings.DisabledLocationDieEnabled)
 			{
 				RollDisabledLocationDie(DisabledLocationDieImage, false);
@@ -217,7 +221,12 @@ namespace TheDaedalusSentenceCompanion
 		{
 			if (!isTapped)
 			{
-				if (interactive) isTapped = true;
+				if (interactive)
+				{
+					isTapped = true;
+					AudioManager.PlaySound("DiceRoll.wav");
+				}
+
 				var rnd = new Random();
 				await imageToUpdate.FadeTo(0, 250, Easing.Linear);
 				imageToUpdate.Source = string.Format("diespecial{0}.png", rnd.Next(1, 7));
@@ -232,7 +241,11 @@ namespace TheDaedalusSentenceCompanion
 		{
 			if (!isTapped)
 			{
-				if (interactive) isTapped = true;
+				if (interactive)
+				{
+					isTapped = true;
+					AudioManager.PlaySound("DiceRoll.wav");
+				}
 				var rnd = new Random();
 				var diceroll = rnd.Next(1, 7);
 
@@ -248,7 +261,12 @@ namespace TheDaedalusSentenceCompanion
 		{
 			if (!isTapped)
 			{
-				if (interactive) isTapped = true;
+				if (interactive)
+				{
+					isTapped = true;
+					AudioManager.PlaySound("DiceRoll.wav");
+				}
+
 				var rnd = new Random();
 
 				await imageToUpdate.FadeTo(0, 250, Easing.Linear);

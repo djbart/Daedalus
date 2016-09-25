@@ -203,11 +203,11 @@
     <BundleResource Include="Resources\dietheseus6.png" />
     <BundleResource Include="Resources\dietheseus6%402x.png" />
     <BundleResource Include="Resources\dietheseus6%403x.png" />
-    <BundleResource Include="Sounds\Ian.mp3" />
-    <BundleResource Include="Sounds\Thomas.mp3" />
     <BundleResource Include="Resources\diespecial1.png" />
     <BundleResource Include="Resources\diespecial1%402x.png" />
     <BundleResource Include="Resources\diespecial1%403x.png" />
+    <BundleResource Include="Sounds\BackgroundMusic.mp3" />
+    <BundleResource Include="Sounds\DiceRoll.wav" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

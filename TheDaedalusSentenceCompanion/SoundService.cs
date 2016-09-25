@@ -11,9 +11,9 @@ namespace TheDaedalusSentenceCompanion
 			_soundProvider = DependencyService.Get<ISoundProvider>();
 		}
 
-		public Task<bool> PlaySoundAsync(string filename)
+		public void PlaySound(string fileName)
 		{
-			return _soundProvider.PlaySoundAsync(filename);
+			_soundProvider.PlaySound(fileName);
 		}
 	}
 }
