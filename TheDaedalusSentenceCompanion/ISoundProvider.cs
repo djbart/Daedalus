@@ -22,6 +22,8 @@ namespace TheDaedalusSentenceCompanion
 		void RestartBackgroundMusic();
 
 		void PlaySound(string fileName);
+		void PlaySound(string filename, bool fadeIn, double secondsToPlay);
+		void StopSound();
 		void PlayClick();
 	}
 }

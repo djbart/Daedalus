@@ -167,6 +167,8 @@ namespace TheDaedalusSentenceCompanion
 				case RoundState.Active:
 					RoundStartTime = DateTime.Now;
 					Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
+					AudioManager.SuspendBackgroundMusic();
+					AudioManager.PlaySound("Countdown1.mp3", true, (double)(GameSettings.RoundTimerInSeconds+5));
 					StartRoundButton.Text = AppResources.EndRound + " " + GameSettings.CurrentRoundNumber;
 					break;
 				case RoundState.Ready:
@@ -175,6 +177,9 @@ namespace TheDaedalusSentenceCompanion
 					StartRoundButton.Text = AppResources.StartRound + " " + GameSettings.CurrentRoundNumber;
 					break;
 				case RoundState.Finished:
+					AudioManager.RestartBackgroundMusic();
+					AudioManager.StopSound();
+					RoundTimerRemainingLabel.Text = NoTimeRemaining;
 					StartRoundButton.Text = AppResources.RerollDice;
 					break;
 			}

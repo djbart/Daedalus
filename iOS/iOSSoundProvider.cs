@@ -131,11 +131,45 @@ namespace TheDaedalusSentenceCompanion.iOS
 
 		public void PlaySound(string filename)
 		{
+			PlaySound(filename, false, 0);
+		}
+
+		public void PlaySound(string filename, bool fadeIn, double secondsToPlay)
+		{
 			NSUrl songURL;
 
 			// Music enabled?
 			if (!EffectsOn) return;
 
+			StopSound();
+
+			// Initialize background music
+			songURL = new NSUrl("Sounds/" + filename);
+			NSError err;
+			soundEffect = new AVAudioPlayer(songURL, Path.GetExtension(filename), out err);
+			soundEffect.Volume = EffectsVolume;
+			soundEffect.FinishedPlaying += delegate
+			{
+				soundEffect = null;
+			};
+			soundEffect.NumberOfLoops = 0;
+			if (secondsToPlay > 0f && soundEffect.Duration > secondsToPlay)
+			{
+				soundEffect.CurrentTime = soundEffect.Duration - secondsToPlay;
+			}
+
+			if (fadeIn)
+			{
+				FadeIn();
+			}
+			else
+			{
+				soundEffect.Play();
+			}
+		}
+
+		public void StopSound()
+		{
 			// Any existing sound effect?
 			if (soundEffect != null)
 			{
@@ -143,19 +177,6 @@ namespace TheDaedalusSentenceCompanion.iOS
 				soundEffect.Stop();
 				soundEffect.Dispose();
 			}
-
-			// Initialize background music
-			songURL = new NSUrl("Sounds/" + filename);
-			NSError err;
-			soundEffect = new AVAudioPlayer(songURL, "wav", out err);
-			soundEffect.Volume = EffectsVolume;
-			soundEffect.FinishedPlaying += delegate
-			{
-				soundEffect = null;
-			};
-			soundEffect.NumberOfLoops = 0;
-			soundEffect.Play();
-
 		}
 
 		public void PlayClick()
@@ -163,24 +184,22 @@ namespace TheDaedalusSentenceCompanion.iOS
 			PlaySound("Click.wav");
 		}
 
+		public async void FadeIn()
+		{
+			soundEffect.Volume = 0f;
+			soundEffect.Play();
+			await Task.Delay(200);
+			await Task.Run(() => { soundEffect.Volume = 0.2f; });
+			await Task.Delay(200);
+			await Task.Run(() => { soundEffect.Volume = 0.4f; });	
+			await Task.Delay(200);
+			await Task.Run(() => { soundEffect.Volume = 0.6f; });
+			await Task.Delay(200);
+			await Task.Run(() => { soundEffect.Volume = 0.8f; });
+			await Task.Delay(200);
+			await Task.Run(() => { soundEffect.Volume = 1.0f; });
+		}
+
 		#endregion
-
-		//public void PlaySound(string fileName)
-		//{
-		//	NSError error = null;
-		//	AVAudioSession.SharedInstance().SetCategory(AVAudioSession.CategoryPlayback, out error);
-
-		//	string sFilePath = NSBundle.MainBundle.PathForResource(Path.GetFileNameWithoutExtension(fileName), Path.GetExtension(fileName));
-		//	var url = NSUrl.FromString(sFilePath);
-		//	var _player = AVAudioPlayer.FromUrl(url);
-		//	_player.Delegate = this;
-		//	_player.Volume = 100f;
-		//	_player.PrepareToPlay();
-		//	_player.FinishedPlaying += (object sender, AVStatusEventArgs e) =>
-		//	{
-		//		_player = null;
-		//	};
-		//	_player.Play();
-		//}
 	}
 }
