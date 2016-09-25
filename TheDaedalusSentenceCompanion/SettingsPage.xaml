@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -42,7 +42,7 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnBackButtonClicked"
-					Grid.Row="0"
+					Grid.Row="8"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 				
 			  <Label TextColor="White" Text="{i18n:Translate RepairsImminent}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
@@ -74,7 +74,7 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnButtonClicked"
-					Grid.Row="8"
+					Grid.Row="0"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 			</Grid>
 		</RelativeLayout>

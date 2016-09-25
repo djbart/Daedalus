@@ -62,11 +62,13 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnQuitButtonClicked(object sender, EventArgs args)
 		{
+			AudioManager.PlayClick();
 			Navigation.PopModalAsync();
 		}
 
 		async void OnMadeItButtonClicked(object sender, EventArgs args)
 		{
+			AudioManager.PlayClick();
 			var answer = await DisplayAlert(AppResources.Escaped, AppResources.EscapedDescription, AppResources.BackToHome, AppResources.Cancel);
 
 			if (answer == true)

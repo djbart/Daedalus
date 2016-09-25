@@ -208,6 +208,7 @@
     <BundleResource Include="Resources\diespecial1%403x.png" />
     <BundleResource Include="Sounds\BackgroundMusic.mp3" />
     <BundleResource Include="Sounds\DiceRoll.wav" />
+    <BundleResource Include="Sounds\Click.wav" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

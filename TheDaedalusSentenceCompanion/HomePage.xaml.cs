@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -7,6 +6,8 @@ namespace TheDaedalusSentenceCompanion
 {
 	public partial class HomePage : ContentPage
 	{
+		ISoundProvider AudioManager { get; set; } = DependencyService.Get<ISoundProvider>();
+
 		public HomePage()
 		{
 			InitializeComponent();
@@ -14,42 +15,34 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnSecondTimeButtonClicked(object sender, EventArgs args)
 		{
-			Page settingsPage = new SettingsPage(new GameSettings(GameModes.SecondTimeThrough));
-
-			var button = (Button)sender;
-			button.Navigation.PushModalAsync(settingsPage);
+			LaunchSettingsPage(GameModes.SecondTimeThrough);
 		}
 
 		void OnVeteranButtonClicked(object sender, EventArgs args)
 		{
-			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Veteran));
-
-			var button = (Button)sender;
-			button.Navigation.PushModalAsync(settingsPage);
+			LaunchSettingsPage(GameModes.Veteran);
 		}
 
 		void OnExpertButtonClicked(object sender, EventArgs args)
 		{
-			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Expert));
-
-			var button = (Button)sender;
-			button.Navigation.PushModalAsync(settingsPage);
+			LaunchSettingsPage(GameModes.Expert);
 		}
 
 		void OnHellInSpaceButtonClicked(object sender, EventArgs args)
 		{
-			Page settingsPage = new SettingsPage(new GameSettings(GameModes.HellInSpace));
-
-			var button = (Button)sender;
-			button.Navigation.PushModalAsync(settingsPage);
+			LaunchSettingsPage(GameModes.HellInSpace);
 		}
 
 		void OnCustomButtonClicked(object sender, EventArgs args)
 		{
-			Page settingsPage = new SettingsPage(new GameSettings(GameModes.Custom));
+			LaunchSettingsPage(GameModes.Custom);
+		}
 
-			var button = (Button)sender;
-			button.Navigation.PushModalAsync(settingsPage);
+		void LaunchSettingsPage(GameModes gameMode)
+		{
+			AudioManager.PlayClick();
+			Page settingsPage = new SettingsPage(new GameSettings(gameMode));
+			Navigation.PushModalAsync(settingsPage);
 		}
 	}
 }

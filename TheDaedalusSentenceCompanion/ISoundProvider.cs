@@ -22,6 +22,7 @@ namespace TheDaedalusSentenceCompanion
 		void RestartBackgroundMusic();
 
 		void PlaySound(string fileName);
+		void PlayClick();
 	}
 }
 

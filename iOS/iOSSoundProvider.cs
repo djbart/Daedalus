@@ -157,6 +157,12 @@ namespace TheDaedalusSentenceCompanion.iOS
 			soundEffect.Play();
 
 		}
+
+		public void PlayClick()
+		{
+			PlaySound("Click.wav");
+		}
+
 		#endregion
 
 		//public void PlaySound(string fileName)

@@ -6,6 +6,8 @@ namespace TheDaedalusSentenceCompanion
 {
 	public partial class SettingsPage : ContentPage
 	{
+		ISoundProvider AudioManager { get; set; } = DependencyService.Get<ISoundProvider>();
+
 		GameSettings GameSettings { get; set; }
 		
 		public SettingsPage(GameSettings gameSettings)
@@ -19,18 +21,15 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnButtonClicked(object sender, EventArgs args)
 		{
-			var button = (Button)sender;
-
+			AudioManager.PlayClick();
 			Page gamePage = new GamePage(GameSettings);
-
-			button.Navigation.PushModalAsync(gamePage);
+			Navigation.PushModalAsync(gamePage);
 		}
 
 		void OnBackButtonClicked(object sender, EventArgs args)
 		{
-			var button = (Button)sender;
-
-			button.Navigation.PopModalAsync();
+			AudioManager.PlayClick();
+			Navigation.PopModalAsync();
 		}
 	}
 }
