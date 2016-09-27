@@ -55,7 +55,7 @@
 			  <Switch IsToggled="{Binding RoundTimerEnabled}" Grid.Row="3" Grid.Column="3" />	
 				
 			  <Label  TextColor="White" Text="{Binding RoundTimerInSecondsText}" IsVisible="{Binding RoundTimerEnabled}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
-			  <Stepper Value="{Binding RoundTimerInSeconds }" IsVisible="{Binding RoundTimerEnabled}" Minimum="15" Maximum="120" Increment="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
+			  <Stepper Value="{Binding RoundTimerInSeconds }" IsVisible="{Binding RoundTimerEnabled}" Minimum="15" Maximum="40" Increment="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
 				
 			  <Label  TextColor="White" Text="{i18n:Translate RollingLockdowns}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
 			  <Switch IsToggled="{Binding DisabledLocationDieEnabled}" Grid.Row="5" Grid.Column="3" />
