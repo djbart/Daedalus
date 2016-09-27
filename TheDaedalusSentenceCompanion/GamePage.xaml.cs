@@ -184,7 +184,7 @@ namespace TheDaedalusSentenceCompanion
 					break;
 			}
 
-			if (CurrentRoundState == RoundState.Active)
+			if (CurrentRoundState != RoundState.Ready)
 			{
 				DisabledLocationDieImage.Opacity = 0.5;
 				RoundTimerDieImage.Opacity = 0.5;
@@ -202,7 +202,7 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnTapDisabledLocationDie(object sender, EventArgs args)
 		{
-			if (CurrentRoundState != RoundState.Active)
+			if (CurrentRoundState == RoundState.Ready)
 			{
 				RollDisabledLocationDie((Image)sender, true);
 			}
@@ -210,7 +210,7 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnTapRoundTimerDie(object sender, EventArgs args)
 		{
-			if (CurrentRoundState != RoundState.Active)
+			if (CurrentRoundState == RoundState.Ready)
 			{
 				RollRoundDie((Image)sender, true);
 			}
@@ -218,7 +218,7 @@ namespace TheDaedalusSentenceCompanion
 
 		void OnTapTheseusDie(object sender, EventArgs args)
 		{
-			if (CurrentRoundState != RoundState.Active)
+			if (CurrentRoundState == RoundState.Ready)
 			{
 				RollTheseusDie((Image)sender, true);
 			}
