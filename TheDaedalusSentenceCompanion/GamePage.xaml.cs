@@ -185,7 +185,11 @@ namespace TheDaedalusSentenceCompanion
 					RoundStartTime = DateTime.Now;
 					Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
 					AudioManager.SuspendBackgroundMusic();
-					AudioManager.PlaySound("Countdown1.mp3", true, (double)(GameSettings.RoundTimerInSeconds+5));
+
+					var rnd = new Random();
+					var countdownSong = string.Format("Countdown{0}.mp3", rnd.Next(1, 3));
+
+					AudioManager.PlaySound(countdownSong, true, (double)(GameSettings.RoundTimerInSeconds+5));
 					StartRoundButton.Text = AppResources.EndRound + " " + GameSettings.CurrentRoundNumber;
 					break;
 				case RoundState.Ready:
