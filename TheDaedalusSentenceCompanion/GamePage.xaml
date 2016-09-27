@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -87,6 +87,7 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnStartRoundButtonClicked"
+					IsVisible="{Binding RoundTimerVisible}"
 					Grid.Row="7"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
 				<Button Text="{i18n:Translate MadeIt}"
