@@ -42,7 +42,12 @@ namespace TheDaedalusSentenceCompanion
 
 		void RerollDice()
 		{
-			AudioManager.PlaySound("DiceRoll.wav");
+			if (GameSettings.DisabledLocationDieEnabled
+				|| GameSettings.RoundTimerDieEnabled
+				|| GameSettings.TheseusDieEnabled)
+			{
+				AudioManager.PlaySound("DiceRoll.wav");
+			}
 
 			if (GameSettings.DisabledLocationDieEnabled)
 			{
@@ -152,7 +157,19 @@ namespace TheDaedalusSentenceCompanion
 			switch (CurrentRoundState)
 			{
 				case RoundState.Active:
-					CurrentRoundState = RoundState.Finished;
+					if (GameSettings.DisabledLocationDieEnabled
+						|| GameSettings.RoundTimerDieEnabled
+						|| GameSettings.TheseusDieEnabled)
+					{
+						CurrentRoundState = RoundState.Finished;
+					}
+					else
+					{
+						AudioManager.RestartBackgroundMusic();
+						AudioManager.StopSound();
+						RoundTimerRemainingLabel.Text = GameSettings.RoundTimerCountdownText;
+						CurrentRoundState = RoundState.Ready;
+					}
 					break;
 				case RoundState.Finished:
 					CurrentRoundState = RoundState.Ready;
