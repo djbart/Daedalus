@@ -95,6 +95,12 @@ namespace TheDaedalusSentenceCompanion {
             }
         }
         
+        public static string RepairsImminentDesc {
+            get {
+                return ResourceManager.GetString("RepairsImminentDesc", resourceCulture);
+            }
+        }
+        
         public static string Minutes {
             get {
                 return ResourceManager.GetString("Minutes", resourceCulture);
@@ -104,6 +110,12 @@ namespace TheDaedalusSentenceCompanion {
         public static string AutomatedSecuritySystems {
             get {
                 return ResourceManager.GetString("AutomatedSecuritySystems", resourceCulture);
+            }
+        }
+        
+        public static string AutomatedSecuritySystemsDesc {
+            get {
+                return ResourceManager.GetString("AutomatedSecuritySystemsDesc", resourceCulture);
             }
         }
         
@@ -119,15 +131,33 @@ namespace TheDaedalusSentenceCompanion {
             }
         }
         
+        public static string RollingLockdownsDesc {
+            get {
+                return ResourceManager.GetString("RollingLockdownsDesc", resourceCulture);
+            }
+        }
+        
         public static string EmergencyProtocols {
             get {
                 return ResourceManager.GetString("EmergencyProtocols", resourceCulture);
             }
         }
         
+        public static string EmergencyProtocolsDesc {
+            get {
+                return ResourceManager.GetString("EmergencyProtocolsDesc", resourceCulture);
+            }
+        }
+        
         public static string FaultyAlgorithm {
             get {
                 return ResourceManager.GetString("FaultyAlgorithm", resourceCulture);
+            }
+        }
+        
+        public static string FaultyAlgorithmDesc {
+            get {
+                return ResourceManager.GetString("FaultyAlgorithmDesc", resourceCulture);
             }
         }
         

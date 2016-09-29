@@ -49,7 +49,7 @@
 				    <Label.FormattedText>
 				        <FormattedString>
 				                <Span Text="{i18n:Translate RepairsImminent}"  />
-				                <Span Text="&#13;Global game timer" FontSize="Small" ForegroundColor="Gray" />
+				                <Span Text="{i18n:Translate RepairsImminentDesc}" FontSize="Small" ForegroundColor="Gray" />
 				        </FormattedString>
 				    </Label.FormattedText>
 				</Label>
@@ -58,19 +58,47 @@
 			  <Label  TextColor="White" Text="{Binding GameTimerInMinutesText}" IsVisible="{Binding GameTimerEnabled}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
 			  <Stepper Value="{Binding GameTimerInMinutes }" IsVisible="{Binding GameTimerEnabled}" Minimum="20" Maximum="120" Increment="5" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
 				
-			  <Label  TextColor="White" Text="{i18n:Translate AutomatedSecuritySystems}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+					<Label.FormattedText>
+				        <FormattedString>
+				                <Span Text="{i18n:Translate AutomatedSecuritySystems}"  />
+				                <Span Text="{i18n:Translate AutomatedSecuritySystemsDesc}" FontSize="Small" ForegroundColor="Gray" />
+				        </FormattedString>
+				    </Label.FormattedText>
+			  </Label>
 			  <Switch IsToggled="{Binding RoundTimerEnabled}" Toggled="SwitchToggleSound" Grid.Row="3" Grid.Column="3" />	
 				
 			  <Label  TextColor="White" Text="{Binding RoundTimerInSecondsText}" IsVisible="{Binding RoundTimerEnabled}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 			  <Stepper Value="{Binding RoundTimerInSeconds }" IsVisible="{Binding RoundTimerEnabled}" Minimum="15" Maximum="40" Increment="5" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand" />
 				
-			  <Label  TextColor="White" Text="{i18n:Translate RollingLockdowns}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3">
+					<Label.FormattedText>
+				        <FormattedString>
+				                <Span Text="{i18n:Translate RollingLockdowns}"  />
+				                <Span Text="{i18n:Translate RollingLockdownsDesc}" FontSize="Small" ForegroundColor="Gray" />
+				        </FormattedString>
+				    </Label.FormattedText>
+			  </Label>
 			  <Switch IsToggled="{Binding DisabledLocationDieEnabled}" Toggled="SwitchToggleSound" Grid.Row="5" Grid.Column="3" />
 				
-			  <Label  TextColor="White" Text="{i18n:Translate EmergencyProtocols}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+			  		<Label.FormattedText>
+				        <FormattedString>
+				                <Span Text="{i18n:Translate EmergencyProtocols}"  />
+				                <Span Text="{i18n:Translate EmergencyProtocolsDesc}" FontSize="Small" ForegroundColor="Gray" />
+				        </FormattedString>
+				    </Label.FormattedText>
+			  </Label>
 			  <Switch IsToggled="{Binding RoundTimerDieEnabled}" Toggled="SwitchToggleSound" Grid.Row="6" Grid.Column="3" />
 				
-			  <Label  TextColor="White" Text="{i18n:Translate FaultyAlgorithm}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+			  <Label  TextColor="White" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3">
+					<Label.FormattedText>
+				        <FormattedString>
+				                <Span Text="{i18n:Translate FaultyAlgorithm}"  />
+				                <Span Text="{i18n:Translate FaultyAlgorithmDesc}" FontSize="Small" ForegroundColor="Gray" />
+				        </FormattedString>
+				    </Label.FormattedText>
+			  </Label>
 			  <Switch IsToggled="{Binding TheseusDieEnabled}" Toggled="SwitchToggleSound" Grid.Row="7" Grid.Column="3" />
 				
 			  <Button Text="{i18n:Translate StartYourEscape}"

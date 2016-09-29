@@ -36,11 +36,17 @@
 	<data name="RepairsImminent" xml:space="preserve">
     	<value>Repairs imminent</value>
 	</data>
+	<data name="RepairsImminentDesc" xml:space="preserve">
+    	<value>&#13;Global game timer</value>
+	</data>
 	<data name="Minutes" xml:space="preserve">
     	<value>minutes</value>
 	</data>
 	<data name="AutomatedSecuritySystems" xml:space="preserve">
     	<value>Automated security systems</value>
+	</data>
+	<data name="AutomatedSecuritySystemsDesc" xml:space="preserve">
+    	<value>&#13;Round timer</value>
 	</data>
 	<data name="Seconds" xml:space="preserve">
     	<value>seconds</value>
@@ -48,11 +54,20 @@
 	<data name="RollingLockdowns" xml:space="preserve">
     	<value>Rolling lockdowns</value>
 	</data>
+	<data name="RollingLockdownsDesc" xml:space="preserve">
+    	<value>&#13;Disabled location die</value>
+	</data>
 	<data name="EmergencyProtocols" xml:space="preserve">
     	<value>Emergency protocols</value>
 	</data>
+	<data name="EmergencyProtocolsDesc" xml:space="preserve">
+    	<value>&#13;Round timer die</value>
+	</data>
 	<data name="FaultyAlgorithm" xml:space="preserve">
     	<value>Faulty algorithm</value>
+	</data>
+	<data name="FaultyAlgorithmDesc" xml:space="preserve">
+    	<value>&#13;Theseus die</value>
 	</data>
 	<data name="StartYourEscape" xml:space="preserve">
     	<value>Start your escape!</value>
