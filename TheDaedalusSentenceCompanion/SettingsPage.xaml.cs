@@ -9,6 +9,7 @@ namespace TheDaedalusSentenceCompanion
 		ISoundProvider AudioManager { get; set; } = DependencyService.Get<ISoundProvider>();
 
 		GameSettings GameSettings { get; set; }
+		bool Loaded { get; set; } = false;
 		
 		public SettingsPage(GameSettings gameSettings)
 		{
@@ -17,6 +18,8 @@ namespace TheDaedalusSentenceCompanion
 			GameSettings = gameSettings;
 
 			BindingContext = GameSettings;
+
+			Loaded = true;
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)
@@ -30,6 +33,14 @@ namespace TheDaedalusSentenceCompanion
 		{
 			AudioManager.PlayClick();
 			Navigation.PopModalAsync();
+		}
+
+		void SwitchToggleSound(object sender, EventArgs args)
+		{
+			if (Loaded)
+			{
+				AudioManager.PlayBleep();
+			}
 		}
 	}
 }

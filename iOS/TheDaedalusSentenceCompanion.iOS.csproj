@@ -211,6 +211,7 @@
     <BundleResource Include="Sounds\Click.wav" />
     <BundleResource Include="Sounds\Countdown1.mp3" />
     <BundleResource Include="Sounds\Countdown2.mp3" />
+    <BundleResource Include="Sounds\Bleep.wav" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

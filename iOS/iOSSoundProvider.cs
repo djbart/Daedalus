@@ -184,6 +184,11 @@ namespace TheDaedalusSentenceCompanion.iOS
 			PlaySound("Click.wav");
 		}
 
+		public void PlayBleep()
+		{
+			PlaySound("Bleep.wav");
+		}
+
 		public async void FadeIn()
 		{
 			soundEffect.Volume = 0f;
