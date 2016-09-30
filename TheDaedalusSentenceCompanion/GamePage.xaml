@@ -88,6 +88,7 @@
 					BorderRadius="10"
 					Clicked="OnStartRoundButtonClicked"
 					IsVisible="{Binding RoundTimerVisible}"
+					FontSize="Large"
 					Grid.Row="7"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
 				<Button Text="{i18n:Translate MadeIt}"
@@ -98,6 +99,7 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnMadeItButtonClicked"
+					FontSize="Large"
 					Grid.Row="10"
 					Grid.Column="0" Grid.ColumnSpan="6"/>
 				<Button Text="{i18n:Translate QuitGame}"
@@ -107,6 +109,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnQuitButtonClicked"
 					Grid.Row="11"
 					Grid.Column="0" Grid.ColumnSpan="6"/>

@@ -42,7 +42,8 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnBackButtonClicked"
-					Grid.Row="8"
+					FontSize="Large"
+					Grid.Row="0"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 				
 				<Label TextColor="White" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" >
@@ -109,7 +110,8 @@
 					BorderWidth="2"
 					BorderRadius="10"
 					Clicked="OnButtonClicked"
-					Grid.Row="0"
+					FontSize="Large"
+					Grid.Row="8"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 			</Grid>
 		</RelativeLayout>

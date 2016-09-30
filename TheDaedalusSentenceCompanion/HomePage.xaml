@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -32,6 +32,7 @@
 				<Image Source="logodaedalus.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
 				<Label Text="{i18n:Translate ChooseYourEscapePlan}"
 					XAlign="Center"
+					FontSize="Large"
 					TextColor="White" Grid.Row="2" Grid.Column="0"/>
 				<Button x:Id="" Text="{i18n:Translate SecondTimeThrough}"
 					Grid.Row="3"
@@ -40,6 +41,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnSecondTimeButtonClicked"/>
 
 				<Button Text="{i18n:Translate Veteran}"
@@ -49,6 +51,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnVeteranButtonClicked"/>
 					
 				<Button Text="{i18n:Translate Expert}"
@@ -58,6 +61,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnExpertButtonClicked"/>
 
 				<Button Text="{i18n:Translate HellInSpace}"
@@ -67,6 +71,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnHellInSpaceButtonClicked"/>
 
 				<Button Text="{i18n:Translate Custom}"
@@ -76,6 +81,7 @@
 					BorderColor="#68c1e5"
 					BorderWidth="2"
 					BorderRadius="10"
+					FontSize="Large"
 					Clicked="OnCustomButtonClicked"/>
 			</Grid>
 			</RelativeLayout>
