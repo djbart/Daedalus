@@ -76,7 +76,7 @@
     	<value>RONDE TIJD</value>
 	</data>
 	<data name="TimeToEscape" xml:space="preserve">
-    	<value>TIJD OM TE ONTSNAPPEN</value>
+    	<value>RESTERENDE TIJD</value>
 	</data>
 	<data name="StartRound" xml:space="preserve">
     	<value>Start ronde</value>
