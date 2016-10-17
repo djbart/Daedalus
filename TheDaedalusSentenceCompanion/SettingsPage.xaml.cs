@@ -25,6 +25,7 @@ namespace TheDaedalusSentenceCompanion
 		void OnButtonClicked(object sender, EventArgs args)
 		{
 			AudioManager.PlayClick();
+			AudioManager.SuspendBackgroundMusic();
 			Page gamePage = new GamePage(GameSettings);
 			Navigation.PushModalAsync(gamePage);
 		}

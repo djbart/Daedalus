@@ -68,6 +68,7 @@ namespace TheDaedalusSentenceCompanion
 		void OnQuitButtonClicked(object sender, EventArgs args)
 		{
 			AudioManager.PlayClick();
+			AudioManager.RestartBackgroundMusic();
 			Navigation.PopModalAsync();
 		}
 
@@ -78,6 +79,7 @@ namespace TheDaedalusSentenceCompanion
 
 			if (answer == true)
 			{
+				AudioManager.RestartBackgroundMusic();
 				await Navigation.PopModalAsync(false);
 				await Navigation.PopModalAsync();
 			}
@@ -106,7 +108,9 @@ namespace TheDaedalusSentenceCompanion
 
 		async void GameTimerEnded()
 		{
+			GameTimerRemainingLabel.Text = NoTimeRemaining;
 			await DisplayAlert(AppResources.Captured, AppResources.CapturedDescription, AppResources.BackToHome);
+			AudioManager.RestartBackgroundMusic();
 			await Navigation.PopModalAsync(false);
 			await Navigation.PopModalAsync();
 		}
@@ -165,7 +169,6 @@ namespace TheDaedalusSentenceCompanion
 					}
 					else
 					{
-						AudioManager.RestartBackgroundMusic();
 						AudioManager.StopSound();
 						RoundTimerRemainingLabel.Text = GameSettings.RoundTimerCountdownText;
 						CurrentRoundState = RoundState.Ready;
@@ -184,7 +187,6 @@ namespace TheDaedalusSentenceCompanion
 				case RoundState.Active:
 					RoundStartTime = DateTime.Now;
 					Device.StartTimer(TimeSpan.FromSeconds(1), UpdateRoundTimer);
-					AudioManager.SuspendBackgroundMusic();
 
 					var rnd = new Random();
 					var countdownSong = string.Format("Countdown{0}.mp3", rnd.Next(1, 3));
@@ -198,7 +200,6 @@ namespace TheDaedalusSentenceCompanion
 					StartRoundButton.Text = AppResources.StartRound + " " + GameSettings.CurrentRoundNumber;
 					break;
 				case RoundState.Finished:
-					AudioManager.RestartBackgroundMusic();
 					AudioManager.StopSound();
 					RoundTimerRemainingLabel.Text = NoTimeRemaining;
 					StartRoundButton.Text = AppResources.RerollDice;
