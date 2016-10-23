@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace TheDaedalusSentenceCompanion.Droid
 {
-	[Activity (Label = "TheDaedalusSentenceCompanion.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+	[Activity (Label = "Daedalus", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
 	           ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
@@ -19,6 +19,8 @@ namespace TheDaedalusSentenceCompanion.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
+
+			this.Window.SetFlags(WindowManagerFlags.KeepScreenOn, WindowManagerFlags.KeepScreenOn);
 
 			LoadApplication (new App ());
 		}
