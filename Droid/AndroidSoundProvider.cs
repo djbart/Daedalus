@@ -56,7 +56,7 @@ namespace TheDaedalusSentenceCompanion.Droid
 			if (!MusicOn) return;
 
 			// Any existing background music?
-			if (backgroundMusic != null)
+			if (backgroundMusic != null && backgroundMusic.Handle != System.IntPtr.Zero)
 			{
 				//Stop and dispose of any background music
 				backgroundMusic.Stop();
