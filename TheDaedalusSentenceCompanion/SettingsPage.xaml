@@ -6,6 +6,19 @@
 		xmlns:i18n="clr-namespace:TheDaedalusSentenceCompanion;assembly=TheDaedalusSentenceCompanion"
 		Title="Settings"
 		Padding="0" >
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#68c1e5" />
+                <Setter Property="BorderColor" Value="#68c1e5" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderRadius" Value="10" />
+				<Setter Property="Font">
+					<OnPlatform x:TypeArguments="Font" iOS="Large" />
+				</Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 	<ContentPage.Content>
 		<RelativeLayout>
 			<Image
@@ -37,12 +50,8 @@
 			  <Button Text="{i18n:Translate Back}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
 					Clicked="OnBackButtonClicked"
-					FontSize="Large"
+					Style="{StaticResource ButtonStyle}"
 					Grid.Row="0"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 				
@@ -105,12 +114,8 @@
 			  <Button Text="{i18n:Translate StartYourEscape}"
 		            HorizontalOptions="Fill"
 		            VerticalOptions="CenterAndExpand"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
 					Clicked="OnButtonClicked"
-					FontSize="Large"
+					Style="{StaticResource ButtonStyle}"
 					Grid.Row="8"
 					Grid.Column="0" Grid.ColumnSpan="4"/>
 			</Grid>

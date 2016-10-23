@@ -6,6 +6,19 @@
 		xmlns:i18n="clr-namespace:TheDaedalusSentenceCompanion;assembly=TheDaedalusSentenceCompanion"
 		Title="Home"
 		Padding="0" >
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#68c1e5" />
+                <Setter Property="BorderColor" Value="#68c1e5" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderRadius" Value="10" />
+				<Setter Property="Font">
+					<OnPlatform x:TypeArguments="Font" iOS="Large" />
+				</Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 	<ContentPage.Content>
 		<RelativeLayout>
 			<Image
@@ -37,52 +50,32 @@
 				<Button x:Id="" Text="{i18n:Translate SecondTimeThrough}"
 					Grid.Row="3"
 					Grid.Column="0"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
-					FontSize="Large"
-					Clicked="OnSecondTimeButtonClicked"/>
+					Clicked="OnSecondTimeButtonClicked"
+					Style="{StaticResource ButtonStyle}" />
 
 				<Button Text="{i18n:Translate Veteran}"
 					Grid.Row="4"
 					Grid.Column="0"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
-					FontSize="Large"
-					Clicked="OnVeteranButtonClicked"/>
+					Clicked="OnVeteranButtonClicked"
+					Style="{StaticResource ButtonStyle}" />
 					
 				<Button Text="{i18n:Translate Expert}"
 					Grid.Row="5"
 					Grid.Column="0"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
-					FontSize="Large"
-					Clicked="OnExpertButtonClicked"/>
+					Clicked="OnExpertButtonClicked"
+					Style="{StaticResource ButtonStyle}" />
 
 				<Button Text="{i18n:Translate HellInSpace}"
 					Grid.Row="6"
 					Grid.Column="0"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
-					FontSize="Large"
-					Clicked="OnHellInSpaceButtonClicked"/>
+					Clicked="OnHellInSpaceButtonClicked"
+					Style="{StaticResource ButtonStyle}" />
 
 				<Button Text="{i18n:Translate Custom}"
 					Grid.Row="7"
 					Grid.Column="0"
-					TextColor="#68c1e5"
-					BorderColor="#68c1e5"
-					BorderWidth="2"
-					BorderRadius="10"
-					FontSize="Large"
-					Clicked="OnCustomButtonClicked"/>
+					Clicked="OnCustomButtonClicked"
+					Style="{StaticResource ButtonStyle}" />
 			</Grid>
 			</RelativeLayout>
 	</ContentPage.Content>
